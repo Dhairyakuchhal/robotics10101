@@ -61,10 +61,9 @@ def execute(commands, base_url):
         elif command.startswith("JOINT"):
             # JOINT command handling: Move joint I forward or backward
             joint_id = command[-1]  
-            direction = param["direction"]
             magnitude = param.get("magnitude", 1)  # Default to 1 if magnitude is not specified
             
-            print(f"Executing JOINT{joint_id} with direction {direction} and magnitude {magnitude}...")
+            print(f"Executing JOINT{joint_id} with magnitude {magnitude}...")
             response = requests.post(url, json=param)
             # handle_response(response)
                 
